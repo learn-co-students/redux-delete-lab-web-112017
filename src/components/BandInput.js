@@ -20,11 +20,11 @@ class BandInput extends Component {
     this.props.store.dispatch({
       type: 'ADD_BAND', 
       band: {
-        text: this.state.text,
+        text: this.state.text
       },
     });
     this.setState({
-      text: '',
+      text: ''
     });
   }
 
@@ -32,7 +32,7 @@ class BandInput extends Component {
     return (
       <div>
         <form onSubmit={(event) => this.handleOnSubmit(event)}>
-          <input type="text" onChange={(event) => this.handleOnChange(event)} />
+          <input type="text" value={this.state.text} onChange={(event) => this.handleOnChange(event)} />
           <input type="submit" />
         </form>
       </div>
