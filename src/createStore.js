@@ -6,10 +6,10 @@ export default function createStore(reducer) {
   function dispatch(action) {
     state = reducer(state, action);
      if (process.env.NODE_ENV !== 'test') {
-      console.log(`the action is`);
-      console.log(action);
-      console.log(`the state is`);
-      console.log(state);
+      // console.log(`the action is`);
+      // console.log(action);
+      // console.log(`the state is`);
+      // console.log(state);
     }
     renderer.render();
   }
@@ -19,7 +19,7 @@ export default function createStore(reducer) {
   }
 
   return {
-    dispatch, 
+    dispatch,
     getState,
   };
 };
