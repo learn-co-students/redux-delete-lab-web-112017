@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+let id = 1;
 class BandInput extends Component {
   constructor(props) {
     super(props);
@@ -18,14 +19,16 @@ class BandInput extends Component {
   handleOnSubmit(event) {
     event.preventDefault();
     this.props.store.dispatch({
-      type: 'ADD_BAND', 
+      type: 'ADD_BAND',
       band: {
         text: this.state.text,
+        id: id
       },
     });
     this.setState({
       text: '',
     });
+    id++;
   }
 
   render() {
